@@ -136,7 +136,7 @@ func main() {
 		// Среднее значение курса (исключая выходные и праздничные дни)
 		avgRate := float64(sumRate) / float64(len(rates))
 
-		fmt.Printf("%s(%s)\t, ", rates[0].Name, charCode)
+		fmt.Printf("%s(%s),\t", rates[0].Name, charCode)
 		fmt.Printf("maximum value: %.4f on %s; ", maxRate, maxRateDate)
 		fmt.Printf("minimum value: %.4f on %s; ", minRate, minRateDate)
 		fmt.Printf("average value: %.4f\n", avgRate)
