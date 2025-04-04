@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"golang.org/x/net/html/charset"
 	"io"
+	"math"
 	"net/http"
 	"strconv"
 	"strings"
@@ -115,10 +116,10 @@ func main() {
 		}
 
 		var minRate, maxRate, sumRate float64
-		minRate = rates[0].Value
-		maxRate = rates[0].Value
-		minRateDate := rates[0].Date
-		maxRateDate := rates[0].Date
+		minRate = math.MaxFloat64
+		maxRate = 0.0
+		minRateDate := now.Format("02/01/2006")
+		maxRateDate := startDate.Format("02/01/2006")
 
 		for _, rate := range rates {
 			if rate.Value < minRate {
